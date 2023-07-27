@@ -1,10 +1,10 @@
-package spring.biz;
+package springtest1.biz;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import springdao.UserDao;
+import springtest1.dao.UserDao;
 
 @Service
 public class UserBizImpl implements UserBiz{

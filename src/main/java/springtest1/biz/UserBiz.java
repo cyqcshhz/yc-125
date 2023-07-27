@@ -1,4 +1,4 @@
-package spring.biz;
+package springtest1.biz;
 
 public interface UserBiz {
 
