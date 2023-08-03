@@ -7,7 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="yc-github" />
+        <module name="AOP1" />
+        <module name="selfproxy" />
+        <module name="txbank" />
+        <module name="yc-logger" />
       </profile>
     </annotationProcessing>
   </component>

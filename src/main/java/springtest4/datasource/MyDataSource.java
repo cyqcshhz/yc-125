@@ -1,4 +1,4 @@
-package springtest4;
+package springtest4.datasource;
 
 
 import org.springframework.beans.factory.annotation.Value;
@@ -21,8 +21,8 @@ public class MyDataSource implements DataSource {
 
     @Value("${coreSize}")
     private int coreSize;
-    @Value("${username}")
-    private String username;
+    @Value("${user}")
+    private String user;
     @Value("${password}")
     private String password;
     @Value("${url}")
@@ -39,7 +39,7 @@ public class MyDataSource implements DataSource {
         for (int i=0;i<coreSize;i++){
             MyConnection mc=new MyConnection();
             mc.statue=false;
-            mc.con= DriverManager.getConnection(url,username,password);
+            mc.con= DriverManager.getConnection(url,user,password);
             pool.add(mc);
         }
 
@@ -61,6 +61,13 @@ public class MyDataSource implements DataSource {
                 return mc.con;
             }
         }while (true);
+    }
+
+    public void returnConnection(Connection con){
+        MyConnection mc=new MyConnection();
+        mc.con=con;
+        mc.statue=false;
+        this.pool.add(mc);
     }
 
     @Override
